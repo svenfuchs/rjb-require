@@ -1,0 +1,22 @@
+h1. Rjb.require
+
+Adds the ability to import and map Java packages to nested Ruby modules/classes to RJB.
+
+h2. Usage
+
+<pre>
+require 'rjb/require'
+
+# java.net.URL is already in your classpath
+Rjb.require 'java.net.URL'
+Java::Net::URL.new('http://github.com')
+
+# load some custom library
+Rjb.load_from 'path/to/htmlunit' # loads all jar files to Rjb
+Rjb.require 'com.gargoylesoftware.htmlunit.WebClient'
+</pre>
+
+h2. Authors
+
+* Original Work: Richard L. Apodaca (see "Mapping Java Packages Onto Ruby Modules":http://depth-first.com/articles/2006/10/24/metaprogramming-with-ruby-mapping-java-packages-onto-ruby-modules)
+* Modifications: Sven Fuchs (Ruby gem, RJB module level method, add RJB.load_from for convenience)

@@ -1,0 +1,1 @@
+require 'rjb/require'
